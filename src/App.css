@@ -1,0 +1,35 @@
+.output {
+  display: flex;
+  flex-direction: row;
+}
+
+.form {
+  display: flex;
+  max-width: 600px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  max-width: 90px;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  width: 15vw;
+  height: 20vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.color {
+  width: 75px;
+  height: 75px;
+}
+
+.text {
+  font-size: 12px;
+}
