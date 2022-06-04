@@ -67,6 +67,13 @@ function App() {
     });
   };
 
+  const handleClick = () => {
+    setH(0);
+    setV(0);
+    setS(0);
+    setN(1);
+  }
+
   // console.log(colorsys.hsl2Rgb(473, 23, 119))
   // console.log(genArray(33, 27, 11, 13))
 
@@ -80,6 +87,7 @@ function App() {
             id="h"
             min="0"
             max="360"
+            value={h}
             onChange={(e) => setH(e.target.value)}
           />
         </div>
@@ -90,6 +98,7 @@ function App() {
             id="s"
             min="0"
             max="100"
+            value={s}
             onChange={(e) => setS(e.target.value)}
           />
         </div>
@@ -100,6 +109,7 @@ function App() {
             id="v"
             min="0"
             max="100"
+            value={v}
             onChange={(e) => setV(e.target.value)}
           />
         </div>
@@ -110,9 +120,11 @@ function App() {
             id="n"
             min="1"
             max="15"
+            value={n}
             onChange={(e) => setN(e.target.value)}
           />
         </div>
+        <button type="button" onClick={handleClick}>Reset</button>
       </form>
       <br />
       <div className="output">{genJSX(h, s, v, n)}</div>
