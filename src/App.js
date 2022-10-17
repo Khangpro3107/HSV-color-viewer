@@ -8,28 +8,6 @@ function App() {
   const [v, setV] = useState(0);
   const [n, setN] = useState(1);
 
-  // function hsv2hsl(h, s, v) {
-  //   var l = ((2 - s) * v) / 2;
-
-  //   if (l !== 0) {
-  //     if (l === 1) {
-  //       s = 0;
-  //     } else if (l < 0.5) {
-  //       s = (s * v) / (l * 2);
-  //     } else {
-  //       s = (s * v) / (2 - l * 2);
-  //     }
-  //   }
-
-  //   return [h, s, l];
-  // }
-
-  // function hsv2rgb(h, s, v) {
-  //   let f = (n, k = (n + h / 60) % 6) =>
-  //     v - v * s * Math.max(Math.min(k, 4 - k, 1), 0);
-  //   return [f(5), f(3), f(1)];
-  // }
-
   const genArray = (h, s, v, n) => {
     const hue = parseInt(h);
     const saturation = parseInt(s);
@@ -59,7 +37,8 @@ function App() {
             style={{ backgroundColor: colorsys.stringify(rgb) }}
           ></div>
           <div className="text">
-            {colorsys.stringify({ h: obj.h, s: obj.s, v: obj.v })}; {colorsys.rgb2Hex(rgb)}
+            {colorsys.stringify({ h: obj.h, s: obj.s, v: obj.v })};{" "}
+            {colorsys.rgb2Hex(rgb)}
           </div>
           {console.log(obj)}
         </div>
@@ -72,7 +51,7 @@ function App() {
     setV(0);
     setS(0);
     setN(1);
-  }
+  };
 
   // console.log(colorsys.hsl2Rgb(473, 23, 119))
   // console.log(genArray(33, 27, 11, 13))
@@ -124,7 +103,9 @@ function App() {
             onChange={(e) => setN(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleClick}>Reset</button>
+        <button type="button" onClick={handleClick}>
+          Reset
+        </button>
       </form>
       <br />
       <div className="output">{genJSX(h, s, v, n)}</div>
